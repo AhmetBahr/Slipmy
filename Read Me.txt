@@ -1,0 +1,2 @@
+3. oyunumun "Player" kodlarının şu anlık hali 
+	içinde 2 tip karakteri belirli sabit bir yol boyunca ilerlemesini sağlayan kod vardır.
