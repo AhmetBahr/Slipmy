@@ -1,2 +1,6 @@
+Push 1;
 3. oyunumun "Player" kodlarının şu anlık hali 
 	içinde 2 tip karakteri belirli sabit bir yol boyunca ilerlemesini sağlayan kod vardır.
+Push 2;
+Score kod sayfası eklendi artık karakterimiz düz yolda ilerleken her saniye başına skoru artıcak ve ekranda anlık olarak skoru gözükecek
+
