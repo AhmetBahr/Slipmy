@@ -28,11 +28,13 @@ public class Player : MonoBehaviour
         }
     } 
     */
+   
     private CharacterController controller;
     public float speed  = 5.0f;
     private Vector3 moveVector;
     private float verticalVelocity = 0.0f;
     private float gravity = 12.0f;
+    private bool isDeath = false;
 
     private void Start()
     {
@@ -41,6 +43,11 @@ public class Player : MonoBehaviour
     }
     private void Update()
     {
+        if (isDeath)
+        {
+            return;
+        }
+
         moveVector = Vector3.zero;
 
         if (controller.isGrounded)
@@ -69,6 +76,21 @@ public class Player : MonoBehaviour
     public void SetSpeed(float modifier)
     {
         speed = 2.0f + modifier;
+    }
+
+    public void OnCollisionEnter(Collision collisionInfo)
+    {
+        if (collisionInfo.collider.tag == "Hit") 
+        {
+            Death();
+        }
+    }
+
+    private void Death()
+    {
+         Debug.Log("Death");
+        //isDeath = true;
+        GetComponent<Score>().OnDeath();
     }
 
 }

@@ -4,3 +4,7 @@ Push 1;
 Push 2;
 Score kod sayfası eklendi artık karakterimiz düz yolda ilerleken her saniye başına skoru artıcak ve ekranda anlık olarak skoru gözükecek
 
+Push 3;
+	Player ve score içersine death kodları eklendi artık öldüklerinde ekrana öldü yazısı çıkıyor ve skor duruyor 
+ 	
+	2 farklı yöntemle kamera takibi kodu eklendi 
