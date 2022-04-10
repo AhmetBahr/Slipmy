@@ -8,3 +8,6 @@ Push 3;
 	Player ve score içersine death kodları eklendi artık öldüklerinde ekrana öldü yazısı çıkıyor ve skor duruyor 
  	
 	2 farklı yöntemle kamera takibi kodu eklendi 
+Push 4;
+	Spawner eklendi;
+		Player tag'li nesnelere göre belirli aralıklarla mekan spawlayan bir spawner 
