@@ -15,3 +15,6 @@ Push 5;
 
 	projede büyük değişikler ile birlikte 0 dan "temel, player ve input" kodları yazıldı farklı bir kod yazma tekniği ve unityinin bize 
 sağladığı kolaylıklar kulanılmaya başlandı
+
+Push 6;
+	Enemy kodları eklendi, düşmanızmız artık tek bir yol üzerinde belirli bir hızla ilerliyor
