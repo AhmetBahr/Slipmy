@@ -18,3 +18,6 @@ sağladığı kolaylıklar kulanılmaya başlandı
 
 Push 6;
 	Enemy kodları eklendi, düşmanızmız artık tek bir yol üzerinde belirli bir hızla ilerliyor
+
+Push 7;
+	Spawner nesneleri oluşturuldu ve bu nesneler randım bi zaman içersinde enemy spawlanması sağlandı
