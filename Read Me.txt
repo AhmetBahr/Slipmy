@@ -11,3 +11,7 @@ Push 3;
 Push 4;
 	Spawner eklendi;
 		Player tag'li nesnelere göre belirli aralıklarla mekan spawlayan bir spawner 
+Push 5;
+
+	projede büyük değişikler ile birlikte 0 dan "temel, player ve input" kodları yazıldı farklı bir kod yazma tekniği ve unityinin bize 
+sağladığı kolaylıklar kulanılmaya başlandı
