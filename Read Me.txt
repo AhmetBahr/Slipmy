@@ -21,3 +21,6 @@ Push 6;
 
 Push 7;
 	Spawner nesneleri oluşturuldu ve bu nesneler randım bi zaman içersinde enemy spawlanması sağlandı
+
+Push 8;
+	GameManager eklendi ve karakterimiz artık bir nesneye çarptığı zaman oyun duruyor

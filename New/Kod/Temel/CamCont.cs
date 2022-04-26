@@ -8,7 +8,7 @@ public class CamCont : MonoBehaviour
 
     public Transform targer;
     public Vector3 offSet;
-    private float smoothspeed = 0.125f;
+    private float smoothspeed = 0.150f;
 
     private void LateUpdate()
     {
