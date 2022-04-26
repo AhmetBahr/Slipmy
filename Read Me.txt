@@ -24,3 +24,5 @@ Push 7;
 
 Push 8;
 	GameManager eklendi ve karakterimiz artık bir nesneye çarptığı zaman oyun duruyor
+Push 9;
+	Menu kodları eklendi ve diğer bazı küçük hatalar düzeltildi

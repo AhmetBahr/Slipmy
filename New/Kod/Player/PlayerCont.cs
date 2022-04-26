@@ -1,6 +1,7 @@
 using slmp.abstracts.Input;
 using slmp.input;
 using slmp.jump;
+using slmp.Manager;
 using slmp.movvents;
 using System.Collections;
 using System.Collections.Generic;
@@ -21,6 +22,7 @@ namespace slmp.cont
         IInputReader _input;
         float _horizontal;
         bool _isJump;
+        bool _isDeat = false;
 
         private void Awake()
         {
@@ -32,6 +34,9 @@ namespace slmp.cont
 
         void Update()
         {
+            if (_isDeat)
+                return;
+
             _horizontal = _input.Horizontal;
 
             if (_input.IsJump)
@@ -56,6 +61,18 @@ namespace slmp.cont
 
 
         }
+
+        void OnTriggerEnter(Collider other)
+        {
+            EnemyCont enemyCont = other.GetComponent<EnemyCont>();
+            if (enemyCont != null)
+            {
+                _isDeat = true;
+                GameManager.Instance.StopGame();
+               
+            }
+        }
+
 
     }
 

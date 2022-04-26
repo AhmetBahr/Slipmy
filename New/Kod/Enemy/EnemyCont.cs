@@ -10,7 +10,7 @@ namespace slmp.cont
     {
 
         [SerializeField] float _moveSpeed = 10f;
-        [SerializeField] float _maxLife = 15f;
+        [SerializeField] float _maxLife = 25f;
 
 
         float _lifeTime = 0f;

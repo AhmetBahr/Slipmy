@@ -85,7 +85,7 @@ namespace slmp.input
                 {
                     ""name"": """",
                     ""id"": ""7a1f72de-2489-4db4-b281-ee1bb272724c"",
-                    ""path"": ""<Keyboard>/c"",
+                    ""path"": ""<Keyboard>/space"",
                     ""interactions"": ""Tap(duration=0.01)"",
                     ""processors"": """",
                     ""groups"": """",

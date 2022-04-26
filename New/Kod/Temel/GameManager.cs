@@ -20,6 +20,11 @@ namespace slmp.Manager
             Time.timeScale = 0f;
         }
 
+        public void LoadScene()
+        {
+            Debug.Log("Baþladý"); 
+        }
+
 
     }
 }
