@@ -1,28 +1,10 @@
-Push 1;
-3. oyunumun "Player" kodlarının şu anlık hali 
-	içinde 2 tip karakteri belirli sabit bir yol boyunca ilerlemesini sağlayan kod vardır.
-Push 2;
-Score kod sayfası eklendi artık karakterimiz düz yolda ilerleken her saniye başına skoru artıcak ve ekranda anlık olarak skoru gözükecek
-
-Push 3;
-	Player ve score içersine death kodları eklendi artık öldüklerinde ekrana öldü yazısı çıkıyor ve skor duruyor 
- 	
-	2 farklı yöntemle kamera takibi kodu eklendi 
-Push 4;
-	Spawner eklendi;
-		Player tag'li nesnelere göre belirli aralıklarla mekan spawlayan bir spawner 
-Push 5;
-
-	projede büyük değişikler ile birlikte 0 dan "temel, player ve input" kodları yazıldı farklı bir kod yazma tekniği ve unityinin bize 
-sağladığı kolaylıklar kulanılmaya başlandı
-
-Push 6;
-	Enemy kodları eklendi, düşmanızmız artık tek bir yol üzerinde belirli bir hızla ilerliyor
-
-Push 7;
-	Spawner nesneleri oluşturuldu ve bu nesneler randım bi zaman içersinde enemy spawlanması sağlandı
-
-Push 8;
-	GameManager eklendi ve karakterimiz artık bir nesneye çarptığı zaman oyun duruyor
-Push 9;
-	Menu kodları eklendi ve diğer bazı küçük hatalar düzeltildi
+Push 1; "Player" kodlarının şu anlık hali, içinde 2 tip karakteri belirli sabit bir yol boyunca ilerlemesini sağlayan kod vardır.
+Push 2; Score kod sayfası eklendi artık karakterimiz düz yolda ilerleken her saniye başına skoru artıcak ve ekranda anlık olarak skoru gözükecek
+Push 3; Player ve score içersine death kodları eklendi artık öldüklerinde ekrana öldü yazısı çıkıyor ve skor duruyor 
+Push 4; Spawner eklendi, Player tag'li nesnelere göre belirli aralıklarla mekan spawlayan bir spawner 
+Push 5; Projede büyük değişikler ile birlikte 0 dan "temel, player ve input" kodları yazıldı farklı bir kod yazma tekniği ve unityinin bize  sağladığı kolaylıklar kulanılmaya başlandı
+Push 6; Enemy kodları eklendi, düşmanızmız artık tek bir yol üzerinde belirli bir hızla ilerliyor
+Push 7; Spawner nesneleri oluşturuldu ve bu nesneler randım bi zaman içersinde enemy spawlanması sağlandı
+Push 8; GameManager eklendi ve karakterimiz artık bir nesneye çarptığı zaman oyun duruyor
+Push 9; Menu kodları eklendi ve diğer bazı küçük hatalar düzeltildi
+Push 10; Score mekaiği eklendi

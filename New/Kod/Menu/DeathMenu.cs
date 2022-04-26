@@ -6,18 +6,20 @@ using UnityEngine;
 namespace slmp.UI
 {
 
-    public class MenuCod : MonoBehaviour
+    public class DeathMenu : MonoBehaviour
     {
-        public void StartButton()
+      
+        public void ResartBT()
         {
             GameManager.Instance.LoadScene("Game");
         }
 
-        public void ExitButton()
+        public void MenuBT()
         {
-
+            GameManager.Instance.LoadScene("Menu");
         }
-         
+
+
     }
 
 }
