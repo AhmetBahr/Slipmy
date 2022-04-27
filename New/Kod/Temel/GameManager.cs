@@ -1,4 +1,5 @@
 using slmp.abstracts.Utilities;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,21 +10,25 @@ namespace slmp.Manager
 
     public class GameManager : BahavoirObject<GameManager>
     {
-        public event System.Action stop;
+      
 
-        void Awake()
+        public event System.Action OnGameStop;
+
+        void Awake() 
         {
             SingletonThisObj(this);
-
+ 
         }
 
         public void StopGame()
         {
             Time.timeScale = 0f;
 
-            if(stop != null)
+           // OnGameStop?.Invoke();
+
+            if(OnGameStop != null)
             {
-                stop();
+                OnGameStop();
             }
 
         }

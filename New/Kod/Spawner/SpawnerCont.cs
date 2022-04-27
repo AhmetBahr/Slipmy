@@ -1,3 +1,4 @@
+using slmp.Manager;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,7 +7,6 @@ namespace slmp.cont
 {  
     public class SpawnerCont : MonoBehaviour
     {
-        [SerializeField] EnemyCont _enemyPrefab;
         [Range(0.1f, 9f)][SerializeField] float _min = 0.1f;
         [Range(10f, 20f)][SerializeField] float _max = 20f;
 
@@ -31,8 +31,13 @@ namespace slmp.cont
 
         void Spawn()
         {
-            EnemyCont newEnemy = Instantiate(_enemyPrefab, transform.position, transform.rotation);
-            newEnemy.transform.parent = this.transform;
+            EnemyCont newEnemy = EnemyManager.Instance.GetPool();
+           newEnemy.transform.parent = this.transform;
+            newEnemy.transform.position = this.transform.position;
+            newEnemy.gameObject.SetActive(true);
+           
+
+
             _currnetSpawnTime = 0f;
             GetRandomTime();
         }

@@ -1,3 +1,4 @@
+using slmp.Manager;
 using slmp.movvents;
 using System.Collections;
 using System.Collections.Generic;
@@ -10,10 +11,9 @@ namespace slmp.cont
     {
 
         [SerializeField] float _moveSpeed = 10f;
-        [SerializeField] float _maxLife = 25f;
-
-
-        float _lifeTime = 0f;
+        
+        float _maxLife = 25;
+        public float _lifeTime = 0f;
         VerticalMover _mover;
 
         public float MoveSpeed => _moveSpeed;
@@ -40,7 +40,7 @@ namespace slmp.cont
 
         public void killYourself()
         {
-            Destroy(gameObject);
+            EnemyManager.Instance.Setpool(this);
         }
 
 

@@ -8,3 +8,4 @@ Push 7; Spawner nesneleri oluşturuldu ve bu nesneler randım bi zaman içersind
 Push 8; GameManager eklendi ve karakterimiz artık bir nesneye çarptığı zaman oyun duruyor
 Push 9; Menu kodları eklendi ve diğer bazı küçük hatalar düzeltildi
 Push 10; Score mekaiği eklendi
+Push 11; Canvaslar eklendi öldükten sonra ölüm ekranı eklendi, EnemyPool mantığı eklendi(Artık devamlı spawn yapılmıyor)
