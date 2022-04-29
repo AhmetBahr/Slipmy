@@ -1,3 +1,4 @@
+using slmp.abstracts.mover;
 using slmp.cont;
 using System.Collections;
 using System.Collections.Generic;
@@ -5,7 +6,7 @@ using UnityEngine;
 
 namespace slmp.jump
 {
-   public class JumpRb
+   public class JumpRb : IJump
     {
 
 
@@ -16,7 +17,7 @@ namespace slmp.jump
             _rigitbody = playerCont.GetComponent<Rigidbody>();
         }
 
-        public void TickFixed(float Jumpforce)
+        public void FixedTick(float Jumpforce)
         {
             if(_rigitbody.velocity.y != 0)
             {

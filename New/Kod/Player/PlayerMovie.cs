@@ -1,4 +1,6 @@
 
+using slmp.abstracts.cont;
+using slmp.abstracts.mover;
 using slmp.cont;
 using System.Collections;
 using System.Collections.Generic;
@@ -9,24 +11,32 @@ namespace slmp.movvents
 {
 
 
-    public class PlayerMovie
+    public class PlayerMovie : IMover
     {
-        PlayerCont _playerCont;
+        IEntityCont _playerCont;
+        float _movideSpeed;
+        float _movideBoundary;
 
-        public PlayerMovie(PlayerCont playerCont)
+
+        public PlayerMovie(IEntityCont entityCont)
         {
-            _playerCont = playerCont;
+            _playerCont = entityCont;
+            _movideSpeed = entityCont.MoveSpeed;
+            _movideBoundary=entityCont.MoveBoundary;
+
+
         }
 
-        public void TinkFixed(float horizontal, float movideSpeed)
+        public void FixedTick(float horizontal)
         {
             if(horizontal == 0)
             {
                 return;
             }
 
-            _playerCont.transform.Translate(Vector3.right * horizontal * Time.deltaTime * movideSpeed);
+            _playerCont.transform.Translate(Vector3.right * horizontal * Time.deltaTime * _movideSpeed);
 
+           
 
         }
 

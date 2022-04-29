@@ -1,3 +1,5 @@
+using slmp.abstracts.cont;
+using slmp.abstracts.mover;
 using slmp.cont;
 using System.Collections;
 using System.Collections.Generic;
@@ -5,22 +7,22 @@ using UnityEngine;
 
 namespace slmp.movvents
 {
-    public class VerticalMover 
+    public class VerticalMover : IMover
     {
-        EnemyCont _enemycont;
+        IEntityCont _entityCont;
         float _moveSpeed;
 
 
 
-        public VerticalMover(EnemyCont enemycont)
+        public VerticalMover(IEntityCont entityCont)
         {
-            _enemycont = enemycont;
-            _moveSpeed = _enemycont.MoveSpeed;
+            _entityCont = entityCont;
+            _moveSpeed = _entityCont.MoveSpeed;
         }
 
         public void FixedTick(float vertical = -1)
         {
-            _enemycont.transform.Translate(Vector3.back * vertical * _moveSpeed * Time.deltaTime);
+            _entityCont.transform.Translate(Vector3.back * vertical * _moveSpeed * Time.deltaTime);
         }
 
     }

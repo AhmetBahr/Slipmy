@@ -1,4 +1,6 @@
+using slmp.abstracts.cont;
 using slmp.abstracts.Input;
+using slmp.abstracts.mover;
 using slmp.input;
 using slmp.jump;
 using slmp.Manager;
@@ -10,23 +12,26 @@ using UnityEngine.InputSystem;
 
 namespace slmp.cont
 { 
-    public class PlayerCont : MonoBehaviour
+    public class PlayerCont : ICharacter, IEntityCont
     {
-        [SerializeField] float _movideSpeed = 10f;
+
         [SerializeField] float _jumpforce = 300f;
         [SerializeField] float _horizantalDiraction = 0f;
         //[SerializeField] bool _isJump;
 
-        PlayerMovie _PlayerMovie;
-        JumpRb _jumpRb;
+        IMover _mover;
+        IJump _jumpRb;
         IInputReader _input;
-        float _horizontal;
+        float _horizontal; 
         bool _isJump;
         bool _isDeat = false;
 
+
+
+
         private void Awake()
         {
-            _PlayerMovie = new PlayerMovie(this);
+            _mover = new PlayerMovie(this);
             _jumpRb = new JumpRb(this);
             _input = new InputReader(GetComponent<PlayerInput>());
 
@@ -50,11 +55,11 @@ namespace slmp.cont
 
         public void FixedUpdate()
         {
-            _PlayerMovie.TinkFixed(_horizontal, _movideSpeed);
+            _mover.FixedTick(_horizontal);
 
             if (_isJump)
             {
-                _jumpRb.TickFixed(_jumpforce);
+                _jumpRb.FixedTick(_jumpforce); 
                 
             }
             _isJump = false;
@@ -64,8 +69,8 @@ namespace slmp.cont
 
         void OnTriggerEnter(Collider other)
         {
-            EnemyCont enemyCont = other.GetComponent<EnemyCont>();
-            if (enemyCont != null)
+            IEntityCont entityCont = other.GetComponent<IEntityCont>();
+            if (entityCont != null)
             {
                 _isDeat = true;
                 GameManager.Instance.StopGame();
