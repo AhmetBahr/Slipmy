@@ -1,6 +1,6 @@
 using slmp.abstracts.Utilities;
 using slmp.cont;
-using System;
+using slmp.enums;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,9 +9,9 @@ namespace slmp.Manager
 {
     public class EnemyManager : BahavoirObject<EnemyManager>
     {
-        [SerializeField] EnemyCont _enemyPrefab;
+        [SerializeField] EnemyCont[] _enemyPrefabs;
 
-        Queue<EnemyCont> _enemies = new Queue<EnemyCont>();
+        Dictionary<EnemyEnums,Queue<EnemyCont>> _enemies = new Dictionary<EnemyEnums, Queue<EnemyCont>>();
 
         void Awake()
         {
@@ -27,12 +27,19 @@ namespace slmp.Manager
 
         void Pool()
         {
-            for(int i = 0; i < 50; i++)
+            for (int i = 0; i < _enemyPrefabs.Length; i++)
             {
-                EnemyCont newEnemy = Instantiate(_enemyPrefab);
-                newEnemy.gameObject.SetActive(false);
-                newEnemy.transform.parent = this.transform;
-                _enemies.Enqueue(newEnemy);
+                Queue<EnemyCont> enemyConts = new Queue<EnemyCont>();
+
+                for (int k = 0; k < 50; k++)
+                {
+                    EnemyCont newEnemy = Instantiate(_enemyPrefabs[Random.Range(0, _enemyPrefabs.Length)]);
+                    newEnemy.gameObject.SetActive(false);
+                    newEnemy.transform.parent = this.transform;
+                    enemyConts.Enqueue(newEnemy);
+
+                }
+                _enemies.Add((EnemyEnums)i,enemyConts);
             }
 
         }
@@ -42,14 +49,27 @@ namespace slmp.Manager
             enemyCont.gameObject.SetActive(false);
             enemyCont.transform.parent = this.transform;
 
+            Queue<EnemyCont> enemyConts = _enemies[enemyCont.EnemyType];
+            enemyConts.Enqueue(enemyCont);
         }
-        public EnemyCont GetPool()
+        public EnemyCont GetPool(EnemyEnums enemyType)
         {
-            if(_enemies.Count == 0)
+            Queue<EnemyCont> enemyConts = _enemies[enemyType];
+
+            if(enemyConts.Count == 0)
             {
-                Pool();
+                for(int i=0; i< 2; i++)
+                {
+
+                    EnemyCont newEnemy = Instantiate(_enemyPrefabs[(int)enemyType]);
+                    enemyConts.Enqueue(newEnemy);
+
+                }
+
             }
-            return _enemies.Dequeue();
+
+
+            return enemyConts.Dequeue();
         }   
 
     }

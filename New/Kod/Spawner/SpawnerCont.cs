@@ -1,3 +1,4 @@
+using slmp.enums;
 using slmp.Manager;
 using System.Collections;
 using System.Collections.Generic;
@@ -31,8 +32,8 @@ namespace slmp.cont
 
         void Spawn()
         {
-            EnemyCont newEnemy = EnemyManager.Instance.GetPool();
-           newEnemy.transform.parent = this.transform;
+            EnemyCont newEnemy = EnemyManager.Instance.GetPool((EnemyEnums)Random.Range(0,4));
+            newEnemy.transform.parent = this.transform;
             newEnemy.transform.position = this.transform.position;
             newEnemy.gameObject.SetActive(true);
            
@@ -49,6 +50,6 @@ namespace slmp.cont
 
 
     }
-
+    
 
 }

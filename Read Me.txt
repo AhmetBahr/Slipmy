@@ -10,3 +10,4 @@ Push 9; Menu kodları eklendi ve diğer bazı küçük hatalar düzeltildi
 Push 10; Score mekaiği eklendi
 Push 11; Canvaslar eklendi öldükten sonra ölüm ekranı eklendi, EnemyPool mantığı eklendi(Artık devamlı spawn yapılmıyor)
 Push 12; Kodlar düzenlendi daha sonraki projeler için interface ve abstarct olarak güncellendi
+push 13; 3 farklı tür karakter yapıldı, Enums kod sayfası eklendi ve spawnerlar random bir şekilde 3 farklı enemyden birini spawmlıyor
